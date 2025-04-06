@@ -28,11 +28,11 @@ if (isMainThread) {
     const exportedKeypair = keypair.export();
     const privateKeyBase64 = exportedKeypair.privateKey;
     const privateKeyHex = Buffer.from(privateKeyBase64, 'base64').toString('hex');
-    console.log(`Sui Address: 0x${address}`);
+    console.log(`Sui Address: ${address}`);
     console.log(`Mnemonic: ${mnemonic}`);
     console.log(`Private Key (hex): ${privateKeyHex}`);
     console.log('-'.repeat(80));
-    fs.appendFileSync('address.txt', `0x${address}\n`, 'utf8');
+    fs.appendFileSync('address.txt', `${address}\n`, 'utf8');
     fs.appendFileSync('mnemonic.txt', `${mnemonic}\n`, 'utf8');
     fs.appendFileSync('key.txt', `${privateKeyHex}\n`, 'utf8');
   }
